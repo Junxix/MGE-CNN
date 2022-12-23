@@ -55,7 +55,8 @@ def get_loader(args, train=True, shuffle=False, batch_size=None):
 
     ImageLoader = imp.load_source('loader', src_file).ImageLoader
 
-    data = ImageLoader(args.data,
+    # suppose we only use cub_200_2011
+    data = ImageLoader('/DATA3/Benchmark/MGE/CUB_200_2011',
                        transform=data_transform,
                        train=train, tta=args.tta)
 
