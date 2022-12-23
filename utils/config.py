@@ -106,6 +106,7 @@ parser.add_argument('--beta', default=0, type=float, help='hyperparameter beta')
 parser.add_argument('--cutmix_prob', default=0, type=float, help='cutmix probability')
 parser.add_argument('--mixup_prob', default=0, type=float, help='mixup probability')
 parser.add_argument('--cutout_prob', default=0, type=float, help='cutout probability')
+parser.add_argument('--aug', default=None, type=str, help='aug method')
 
 # test
 parser.add_argument('--trials', type=int, default=1, help='whether random sample novel class')
