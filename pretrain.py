@@ -55,7 +55,7 @@ def main(opt):
 
     # ------main loop-----
     for epoch in range(epoch_start, opt.epochs):
-        scheduler.step()
+        #scheduler.step()
         lr = optimizer.param_groups[0]['lr']
         print(f"\nEpoch: [{epoch+1:d} | {opt.epochs:d}] LR: {lr:f}")
 
@@ -81,6 +81,7 @@ def main(opt):
                  'optimizer' : optimizer.state_dict(),
                  'scheduler' : scheduler.state_dict()
                 }, is_best, checkpoint=opt.checkpoint, filename=f"epoch_{epoch+1}.pth")
+        scheduler.step()
 
     print(f'Best training loss: {best_loss}')
     return 0
