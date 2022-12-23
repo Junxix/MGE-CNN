@@ -61,7 +61,7 @@ def train(train_loader, model, criterion, optimizer, args):
             output_dict = model(mixed_input, target)
             logits = output_dict['logits']
             loss_values = [criterion['entropy'](logit, target_a) * lam + criterion['entropy'](logit, target_b) * (1.0 - lam) for k, logit in enumerate(logits)]
-        elif args.aut =='cutout' and r < args.cutout_prob:
+        elif args.aug =='cutout' and r < args.cutout_prob:
             cutOut(input, target, args.beta)
         else:
             # compute output

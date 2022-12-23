@@ -10,6 +10,7 @@ num_classes: 200
 lr: 0.01
 beta: 1
 cutmix_prob: 0.5
+aug: "cutmix"
 
 loss_keys: ['lg', 'lg1', 'lg2']
 acc_keys: ['ag', 'ag1', 'agc', 'ab1', 'ab11', 'ab1c', 'ab2', 'ab21', 'ab2c', 'a_gate']
