@@ -41,4 +41,4 @@ def mixUp(input, target, beta=1.0):
 def cutOut(input, target, beta=1.0):
     lam = np.random.beta(beta, beta)
     bbx1, bby1, bbx2, bby2 = rand_bbox(input.size(), lam)
-    input[:, :, bbx1:bbx2, bby1:bby2]
+    input[:, :, bbx1:bbx2, bby1:bby2] = 0

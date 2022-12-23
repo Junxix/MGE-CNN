@@ -102,10 +102,10 @@ parser.add_argument('--epochs', default=50, type=int, metavar='N', help='number 
 parser.add_argument('--lr', '--learning-rate', default=0.01, type=float, metavar='LR', help='initial learning rate')
 parser.add_argument('--loss_weights', default='[1, 0, 0, 0]', type=str, help='loss weights')
 parser.add_argument('--pretrained', default=True, type=bool, help='loss weights')
-parser.add_argument('--beta', default=0, type=float,
-                    help='hyperparameter beta')
-parser.add_argument('--cutmix_prob', default=0, type=float,
-                    help='cutmix probability')
+parser.add_argument('--beta', default=0, type=float, help='hyperparameter beta')
+parser.add_argument('--cutmix_prob', default=0, type=float, help='cutmix probability')
+parser.add_argument('--mixup_prob', default=0, type=float, help='mixup probability')
+parser.add_argument('--cutout_prob', default=0, type=float, help='cutout probability')
 
 # test
 parser.add_argument('--trials', type=int, default=1, help='whether random sample novel class')

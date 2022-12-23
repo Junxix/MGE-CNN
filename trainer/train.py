@@ -8,7 +8,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 import time
 
-from utils import RunningMean, update_meter, accuracy, cutMix, mixUp
+from utils import RunningMean, update_meter, accuracy, cutMix, mixUp, cutOut
 
 def exclude_gt(logit, target, is_log=False):
     logit = F.log_softmax(logit, dim=-1) if is_log else F.softmax(logit, dim=-1)
@@ -61,6 +61,8 @@ def train(train_loader, model, criterion, optimizer, args):
             output_dict = model(mixed_input, target)
             logits = output_dict['logits']
             loss_values = [criterion['entropy'](logit, target_a) * lam + criterion['entropy'](logit, target_b) * (1.0 - lam) for k, logit in enumerate(logits)]
+        elif args.aut =='cutout' and r < args.cutout_prob:
+            cutOut(input, target, args.beta)
         else:
             # compute output
             output_dict = model(input, target)
