@@ -57,7 +57,7 @@ def main(opt):
     for epoch in range(epoch_start, opt.epochs):
         #scheduler.step()
         lr = optimizer.param_groups[0]['lr']
-        print(f"\nEpoch: [{epoch+1:d} | {opt.epochs:d}] LR: {lr:f}")
+        print(f"\nEpoch: [{epoch+1:d} | {opt.epochs:d}] LR: {lr:f}", flush=True)
 
         tmp_loss = train(train_loader, model, criterion, optimizer, opt)
         if (epoch + 1)%10 == 0:
@@ -83,7 +83,7 @@ def main(opt):
                 }, is_best, checkpoint=opt.checkpoint, filename=f"epoch_{epoch+1}.pth")
         scheduler.step()
 
-    print(f'Best training loss: {best_loss}')
+    print(f'Best training loss: {best_loss}', flush=True)
     return 0
 
 

@@ -96,5 +96,5 @@ def train(train_loader, model, criterion, optimizer, args):
         optimizer.step()
 
     time_eclapse = time.time() - time_start
-    print(tmp_str + f"t:{time_eclapse:.1f}s")
+    print(tmp_str + f"t:{time_eclapse:.1f}s", flush=True)
     return loss_meter[loss_keys[-1]].value

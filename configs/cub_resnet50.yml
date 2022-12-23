@@ -8,8 +8,10 @@ epochs: 100
 batch_size: 10
 num_classes: 200
 lr: 0.01
+beta: 1
+cutmix_prob: 0.5
 
-loss_keys: ['lg', 'lg1', 'lg2', 'lb1', 'lb11', 'lb12', 'lb2', 'lb21', 'lb22', 'l_gate', 'kl1', 'kl2', 'l_a']
+loss_keys: ['lg', 'lg1', 'lg2']
 acc_keys: ['ag', 'ag1', 'agc', 'ab1', 'ab11', 'ab1c', 'ab2', 'ab21', 'ab2c', 'a_gate']
 test_acc_keys: ['g', 'gm', 'gc', 'b', 'bm', 'bc', 'b2', 'b2m', 'b2c', 'gate']
 

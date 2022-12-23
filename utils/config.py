@@ -86,7 +86,7 @@ def get_config():
 # base
 parser.add_argument('-j', '--workers', default=36, type=int, metavar='N', help='number of data loading workers (default: 4)')
 parser.add_argument('-b', '--batch_size', default=32, type=int, metavar='N', help='mini-batch size (default: 64)')
-parser.add_argument('--gpu_ids', type=str, default='0,1', help='gpu ids: e.g. 0  0,1,2, 0,2. use -1 for CPU')
+parser.add_argument('--gpu_ids', type=str, default='0', help='gpu ids: e.g. 0  0,1,2, 0,2. use -1 for CPU')
 parser.add_argument('--model', default=None, type=str, metavar='PATH', help='path to model (default: none)')
 parser.add_argument('--random', action='store_true', help='whether use random novel weights')
 parser.add_argument('-e', '--evaluate', dest='evaluate', action='store_true', help='evaluate model on validation set')
